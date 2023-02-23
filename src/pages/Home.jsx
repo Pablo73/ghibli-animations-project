@@ -61,7 +61,15 @@ function Home() {
                   alt={ element.original_title_romanised }
                 />
                  { description.some((ele) => ((ele === `img-${index}`))) 
-                   && <h3 id={"descrition"}>{element.description}</h3> }
+                   && 
+                   <div className="descrition">
+                   <br/>
+                   <br/>
+                    <h1 id="title-description">{element.title}</h1>
+                    <br/>
+                    <h2 id="id-description">{element.description}</h2> 
+                   </div>
+                 }
                 <input
                   type="image"
                   value={ index }
