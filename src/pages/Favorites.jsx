@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import DescriptionContext from '../context/DescriptionContext';
 import FavoritesContext from '../context/FavoritesContext';
 import FilmsContext from '../context/FilmsContext';
 import Vector from '../image/Vector.png';
@@ -9,10 +10,17 @@ import VetorRed from '../image/VetorRed.png';
 export default function Favorites() {
   const { favorit, setStateFavorit } = useContext(FavoritesContext);
   const { gitData } = useContext(FilmsContext);
+  const { description, setDescription } = useContext(DescriptionContext);
 
   const removeAnime = ({ target }) => {
     const removeFavorit = favorit.filter((element) => element !== target.value);
     setStateFavorit(removeFavorit);
+    setDescription([]);
+  };
+
+  const btnDescription = ({ target }) => {
+    const uniqueFavorites =([target.value]);
+    setDescription(uniqueFavorites);
   };
 
   return (
@@ -42,13 +50,25 @@ export default function Favorites() {
         <h1 className="filme">Favorites</h1>
         <div className="anime">
           {
-            favorit.map((element) => (
+            favorit.map((element, index) => (
               <div key={ element } className="button">
-                <img
+                   <input
+                  type="image"
+                  value={ `img-${index}` }
                   id={"imageAnime"}
+                  onClick={ btnDescription }
                   src={ gitData[element].image }
                   alt={ gitData[element].original_title_romanised }
                 />
+                { description.some((ele) => ((ele === `img-${index}`))) 
+                   && 
+                   <div className="descrition">
+                   <br/>
+                    <h1 id="title-description">{gitData[element].title}</h1>
+                    <br/>
+                    <h2 id="id-description">{gitData[element].description}</h2> 
+                   </div>
+                 }
                 <input
                   type="image"
                   value={ element }

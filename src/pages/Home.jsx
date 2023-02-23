@@ -17,6 +17,7 @@ function Home() {
     const uniqueFavorites = Array
       .from(new Set([...favorit, target.value]));
     setStateFavorit(uniqueFavorites);
+    setDescription([]);
   };
 
   const btnDescription = ({ target }) => {
@@ -63,7 +64,6 @@ function Home() {
                  { description.some((ele) => ((ele === `img-${index}`))) 
                    && 
                    <div className="descrition">
-                   <br/>
                    <br/>
                     <h1 id="title-description">{element.title}</h1>
                     <br/>
