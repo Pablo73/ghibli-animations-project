@@ -14,15 +14,27 @@ function Home() {
   const { description, setDescription } = useContext(DescriptionContext);
 
   const btnHome = ({ target }) => {
-    const uniqueFavorites = Array
-      .from(new Set([...favorit, target.value]));
-    setStateFavorit(uniqueFavorites);
+    if (favorit.every((ele) => ele !== target.value) || favorit.length === 0) {
+      const uniqueFavorites = Array
+        .from(new Set([...favorit, target.value]));
+
+      setStateFavorit(uniqueFavorites);
+    } else {
+      const disfavor = favorit.filter((ele) => ele !== target.value);
+        
+      setStateFavorit(disfavor);
+    }
+
     setDescription([]);
   };
 
-  const btnDescription = ({ target }) => {
-    const uniqueFavorites =([target.value]);
-    setDescription(uniqueFavorites);
+  const btnDescriptionOn = ({ target }) => {
+    const uniqueDescription =([target.value]);
+    setDescription(uniqueDescription);
+  };
+
+  const btnDescriptionOff = ({ target }) => {
+    setDescription([]);
   };
 
   return (
@@ -41,6 +53,7 @@ function Home() {
               id="heartImagenBlack"
               src={ Vector }
               alt="heartImagen"
+              onClick={ btnDescriptionOff }
             />
           </Link>
           <h2 id="favorit">Favorites</h2>
@@ -56,14 +69,14 @@ function Home() {
                 <input
                   type="image"
                   value={ `img-${index}` }
-                  onClick={ btnDescription }
+                  onClick={ btnDescriptionOn }
                   id={"imageAnime"}
                   src={ element.image }
                   alt={ element.original_title_romanised }
                 />
                  { description.some((ele) => ((ele === `img-${index}`))) 
                    && 
-                   <div className="descrition">
+                   <div className="descrition"  onClick={ btnDescriptionOff }>
                    <br/>
                     <h1 id="title-description">{element.title}</h1>
                     <br/>
