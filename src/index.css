@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 98%;
+  width: 100%;
   /* border: solid  black; */
 }
 
@@ -61,6 +61,7 @@
 }
 
 .imagemGibli{
+  /* border: solid  black; */
   padding-left: 75px;
 }
 
@@ -75,6 +76,7 @@
 }
 
 #heartImagen{
+    /* border: solid  black; */
   width: 10%;
   position: absolute;
   right: 5px;
@@ -86,6 +88,7 @@
   width: 300px;
   position: relative;
 }
+
 
 .descrition{
   border: solid  black;
@@ -106,6 +109,106 @@
    font-size: 15px;
    margin-left: 20px;
    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+  #imageAnime {
+    /* border: solid  black; */
+    width: 120px;
+    position: relative;
+  }
+  #heartImagen{
+    /* border: solid  black; */
+    width: 15%;
+    position: absolute;
+    right: 5px;
+    top:5px
+  }
+
+  #title-description{
+    font-size: 10px;
+    
+ }
+ 
+ #id-description{
+    font-size: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+
+ .imagemGibli{
+  /* border: solid  black; */
+  padding-left: 20px;
+  
+}
+
+.favorit{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 25px;
+  /* border: solid  black; */
+}
+
+.filme{
+  font-family: 'Single Day';
+  font-style: normal;
+  font-size: 35px;
+  margin-left: 37%;
+  margin-top: 180px;
+  color: #000000;
+  text-shadow: 0px 4px 4px rgba(255, 255, 0, 0.75);
+  /* border: solid  black; */
+}
+
+.descrition{
+  border: solid  black;
+  font-family: 'Single Day', sans-serif;                                              
+  text-align: center;
+  position: absolute;
+  background: whitesmoke;
+  opacity: 0.9;
+  height: 180px;
+}
+
+#favorit{
+  font-family: 'Inter';
+  font-style: normal;
+  color: #000000;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0px;
+  /* border: solid  black; */
+}
+
+#imgaemGibli{
+  width: 150px;
+}
+
+.header{
+  /* border: solid  black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  left: 0px;
+  top: 0px;
+  background: #007DF9;
+}
+  
 }
 
 
