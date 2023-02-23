@@ -18,9 +18,13 @@ export default function Favorites() {
     setDescription([]);
   };
 
-  const btnDescription = ({ target }) => {
-    const uniqueFavorites =([target.value]);
-    setDescription(uniqueFavorites);
+  const btnDescriptionOn = ({ target }) => {
+    const uniqueDescription =([target.value]);
+    setDescription(uniqueDescription);
+  };
+
+  const btnDescriptionOff = ({ target }) => {
+    setDescription([]);
   };
 
   return (
@@ -32,6 +36,7 @@ export default function Favorites() {
               id="imgaemGibli"
               src={ images3 }
               alt="gibliImagen"
+              onClick={ btnDescriptionOff }
             />
           </Link>
         </div>
@@ -41,6 +46,7 @@ export default function Favorites() {
               id="heartImagenBlack"
               src={ Vector }
               alt="heartImagen"
+              onClick={ btnDescriptionOff }
             />
           </Link>
           <h2 id="favorit">Favorites</h2>
@@ -56,13 +62,14 @@ export default function Favorites() {
                   type="image"
                   value={ `img-${index}` }
                   id={"imageAnime"}
-                  onClick={ btnDescription }
+                  onClick={ btnDescriptionOn }
                   src={ gitData[element].image }
                   alt={ gitData[element].original_title_romanised }
                 />
                 { description.some((ele) => ((ele === `img-${index}`))) 
                    && 
-                   <div className="descrition">
+                   
+                   <div className="descrition" onClick={ btnDescriptionOff }>
                    <br/>
                     <h1 id="title-description">{gitData[element].title}</h1>
                     <br/>
