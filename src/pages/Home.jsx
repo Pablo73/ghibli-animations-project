@@ -14,7 +14,7 @@ function Home() {
   const { description, setDescription } = useContext(DescriptionContext);
 
   const btnHome = ({ target }) => {
-    if (favorit.every((ele) => ele !== target.value) || favorit.length === 0) {
+    if (favorit.every((ele) => ele !== target.value)) {
       const uniqueFavorites = Array
         .from(new Set([...favorit, target.value]));
 
@@ -79,7 +79,6 @@ function Home() {
                    <div className="descrition"  onClick={ btnDescriptionOff }>
                    <br/>
                     <h1 id="title-description">{element.title}</h1>
-                    <br/>
                     <h2 id="id-description">{element.description}</h2> 
                    </div>
                  }

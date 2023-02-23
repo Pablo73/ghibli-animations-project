@@ -72,7 +72,6 @@ export default function Favorites() {
                    <div className="descrition" onClick={ btnDescriptionOff }>
                    <br/>
                     <h1 id="title-description">{gitData[element].title}</h1>
-                    <br/>
                     <h2 id="id-description">{gitData[element].description}</h2> 
                    </div>
                  }
