@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 100;
+}
+
+.anime{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 98%;
+  /* border: solid  black; */
+}
+
+.button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1%;
+  position: relative;
+  /* border: solid  black; */
+}
+
+
+.filme{
+  font-family: 'Single Day';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  margin-left: 46%;
+  margin-top: 188px;
+  color: #000000;
+  text-shadow: 0px 4px 4px rgba(255, 255, 0, 0.75);
+  /* border: solid  black; */
+}
+
+.favorit{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 200px;
+  /* border: solid  black; */
+}
+
+.header{
+  /* border: solid  black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  left: 0px;
+  top: 0px;
+  background: #007DF9;
+}
+
+.imagemGibli{
+  padding-left: 75px;
+}
+
+#favorit{
+  font-family: 'Inter';
+  font-style: normal;
+  color: #000000;
+  font-weight: 400;
+  font-size: 27px;
+  margin: 0px;
+  /* border: solid  black; */
+}
+
+#heartImagen{
+  width: 10%;
+  position: absolute;
+  right: 5px;
+  top:5px
+}
+
+#imageAnime{
+  /* border: solid  black; */
+  width: 300px;
+  position: relative;
+}
+
+#descrition{
+  /* border: solid  black; */
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: justify;
+  width: 300px;
+  position: absolute;
+  background: whitesmoke;
+  opacity: 0.7;
+  height: 450px;
+}
+
+
+
