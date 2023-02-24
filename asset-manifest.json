@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ghibli-animations-project/static/css/main.add95d15.css",
+    "main.js": "/ghibli-animations-project/static/js/main.2663d3cb.js",
+    "static/media/VetorRed.png": "/ghibli-animations-project/static/media/VetorRed.8e88e77e982a782d5053.png",
+    "static/media/VetorCinza.png": "/ghibli-animations-project/static/media/VetorCinza.6b291d26ed593233fdf4.png",
+    "index.html": "/ghibli-animations-project/index.html",
+    "main.add95d15.css.map": "/ghibli-animations-project/static/css/main.add95d15.css.map",
+    "main.2663d3cb.js.map": "/ghibli-animations-project/static/js/main.2663d3cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.add95d15.css",
+    "static/js/main.2663d3cb.js"
+  ]
+}
