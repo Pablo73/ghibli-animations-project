@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FilmsContext from '../context/FilmsContext';
 import DescriptionContext from '../context/DescriptionContext';
@@ -12,6 +12,18 @@ function Home() {
   const { isLoading, gitData } = useContext(FilmsContext);
   const { favorit, setStateFavorit } = useContext(FavoritesContext);
   const { description, setDescription } = useContext(DescriptionContext);
+   
+  
+  useEffect(() => {
+    const getLocal = JSON.parse(localStorage.getItem('Favorites'));
+    const fav = [];
+    if (getLocal === null) {
+      localStorage.setItem('Favorites', JSON.stringify(fav));
+     } else {
+      setStateFavorit(getLocal);
+     }
+  }, [setStateFavorit]);
+
 
   const btnHome = ({ target }) => {
     if (favorit.every((ele) => ele !== target.value)) {
@@ -19,13 +31,15 @@ function Home() {
         .from(new Set([...favorit, target.value]));
 
       setStateFavorit(uniqueFavorites);
+      localStorage.setItem('Favorites', JSON.stringify(uniqueFavorites));
     } else {
       const disfavor = favorit.filter((ele) => ele !== target.value);
         
       setStateFavorit(disfavor);
+      localStorage.setItem('Favorites', JSON.stringify(disfavor));
+      
     }
 
-    setDescription([]);
   };
 
   const btnDescriptionOn = ({ target }) => {

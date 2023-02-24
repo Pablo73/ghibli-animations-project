@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import DescriptionContext from '../context/DescriptionContext';
 import FavoritesContext from '../context/FavoritesContext';
@@ -15,7 +15,7 @@ export default function Favorites() {
   const removeAnime = ({ target }) => {
     const removeFavorit = favorit.filter((element) => element !== target.value);
     setStateFavorit(removeFavorit);
-    setDescription([]);
+    localStorage.setItem('Favorites', JSON.stringify(removeFavorit));
   };
 
   const btnDescriptionOn = ({ target }) => {
